@@ -2,7 +2,7 @@ from qiskit import *
 from qiskit.circuit import Parameter
 import numpy as np
 
-from openquantumcomputing.QAOABase import QAOABase
+from OLD.QAOABase import QAOABase
 
 
 class QAOAMaxCut(QAOABase):

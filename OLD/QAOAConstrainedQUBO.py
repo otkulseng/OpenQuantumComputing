@@ -14,8 +14,8 @@ import sys
 
 # caution: path[0] is reserved for script path (or '' in REPL)
 
-from openquantumcomputing.Mixer import *
-from openquantumcomputing.QAOAQUBO import QAOAQUBO
+from OLD.Mixer import *
+from OLD.QAOAQUBO import QAOAQUBO
 
 
 class QAOAConstrainedQUBO(QAOAQUBO):

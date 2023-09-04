@@ -4,7 +4,7 @@ import math
 
 from qiskit.circuit import Parameter
 
-from openquantumcomputing.QAOABase import QAOABase
+from OLD.QAOABase import QAOABase
 
 
 class QAOAExactCover(QAOABase):

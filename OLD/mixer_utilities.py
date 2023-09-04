@@ -1,10 +1,10 @@
 import numpy as np
 from sympy.physics.quantum import TensorProduct
 from sympy.physics.paulialgebra import Pauli, evaluate_pauli_product
-from openquantumcomputing.binsymbols import binsymbols
+from OLD.binsymbols import binsymbols
 from sympy import *
 from sympy.core.numbers import One as sympyOne
-from openquantumcomputing.utilities import decompose
+from OLD.utilities import decompose
 import itertools
 import math
 

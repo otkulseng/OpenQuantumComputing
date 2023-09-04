@@ -11,8 +11,8 @@ import sys
 
 # caution: path[0] is reserved for script path (or '' in REPL)
 
-from openquantumcomputing.QAOAConstrainedQUBO import QAOAConstrainedQUBO
-from openquantumcomputing.PauliString import PauliString
+from OLD.QAOAConstrainedQUBO import QAOAConstrainedQUBO
+from OLD.PauliString import PauliString
 
 
 class QAOAKhot(QAOAConstrainedQUBO):

@@ -5,7 +5,7 @@ from qiskit.circuit import Parameter
 from qiskit_algorithms.optimizers import *  ### pip install qiskit-algorithms
 from qiskit.primitives import Sampler
 
-from openquantumcomputing.Statistic import Statistic
+from OLD.Statistic import Statistic
 
 
 class QAOABase:

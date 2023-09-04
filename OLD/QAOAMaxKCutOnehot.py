@@ -1,7 +1,7 @@
 from qiskit import *
 import numpy as np
 
-from openquantumcomputing.QAOABase import QAOABase
+from OLD.QAOABase import QAOABase
 
 
 class QAOAMaxKCutOnehot(QAOABase):
