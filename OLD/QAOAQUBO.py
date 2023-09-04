@@ -68,9 +68,9 @@ class QAOAQUBO(QAOABase):
         assert np.isscalar(b), "b is expected to be scalar, but is " + str(b)
         self.QUBO_b = b
 
-    def cost(self, string):
-        x = np.array(list(map(int, string)))
-        return -(x.T @ self.QUBO_Q @ x + self.QUBO_c.T @ x + self.QUBO_b)
+    # def cost(self, string):
+    #     x = np.array(list(map(int, string)))
+    #     return -(x.T @ self.QUBO_Q @ x + self.QUBO_c.T @ x + self.QUBO_b)
 
     def create_cost_circuit(self):
         if self.lower_triangular_Q:

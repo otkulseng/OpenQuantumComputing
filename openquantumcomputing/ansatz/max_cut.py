@@ -1,15 +1,12 @@
-from qiskit import *
+from ansatz import DefaultAnsatz
+from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.circuit import Parameter
-import numpy as np
 
-from OLD.QAOABase import QAOABase
+class MaxCut(DefaultAnsatz):
+    def __init__(self, params) -> None:
+        super().__init__()
 
-
-class QAOAMaxCut(QAOABase):
-    def __init__(self, params=None):
-        super().__init__(params=params)
-
-        self.G = self.params.get("G", None)
+        self.G = params.get('G', None)
         self.N_qubits = self.G.number_of_nodes()
 
     def cost(self, string):
@@ -22,7 +19,7 @@ class QAOAMaxCut(QAOABase):
                 C += w
         return C
 
-    def create_cost_circuit(self):
+    def create_phase(self):
         """
         Adds a parameterized circuit for the cost part to the member variable self.parameteried_circuit
         and a parameter to the parameter list self.gamma_params
@@ -30,9 +27,8 @@ class QAOAMaxCut(QAOABase):
         q = QuantumRegister(self.N_qubits)
         self.cost_circuit = QuantumCircuit(q)
         cost_param = Parameter("x_gamma")
-        usebarrier = self.params.get("usebarrier", False)
 
-        if usebarrier:
+        if self.usebarrier:
             self.cost_circuit.barrier()
 
         ### cost Hamiltonian
@@ -44,5 +40,5 @@ class QAOAMaxCut(QAOABase):
             self.cost_circuit.cx(q[i], q[j])
             self.cost_circuit.rz(wg, q[j])
             self.cost_circuit.cx(q[i], q[j])
-            if usebarrier:
+            if self.usebarrier:
                 self.cost_circuit.barrier()
